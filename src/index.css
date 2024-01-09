@@ -1,13 +1,56 @@
-body {
+@import url('https://fonts.googleapis.com/css2?family=Afacad:wght@500&family=Montserrat&display=swap');
+
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: Montserrat, sans-serif;
+  color: #333;
+} 
+
+.navBar{
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid #f2f2f2;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.navBar h1{
+  color: #f13560;
+}
+
+.navBar links{
+  margin-left: auto;
+}
+
+.navBar a{
+  margin-left: 16px;
+  text-decoration: none;
+  padding: 6px;
+}
+
+.navBar a:hover{
+  color: #f13560;
+  border-bottom: 2px solid #f13560;
+}
+
+.content {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.blog-preview{
+  padding: 10px 16px;
+  margin: 20px 0;
+  border-bottom: 1px solid #f1356d;
+}
+
+.blog-preview:hover {
+  box-shadow: 1px 3px 5px #f1356d;
+}
+
+.blog-preview h2{
+  font-size: 20px;
+  color: #f1356d;
 }
