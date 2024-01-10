@@ -1,4 +1,5 @@
-
+// import { useState, useEffect } from "react";
+// import BlogList from "./BlogList";
 // const Inicio = () => {
 
 // 	const [nombre, setNombre] = useState("Adria");
@@ -26,7 +27,8 @@
 // 	);
 // }
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import BlogList from "./BlogList";
 
 const Inicio = () => {
 
@@ -34,19 +36,33 @@ const Inicio = () => {
 		{ titulo: "Mi nueva web", body: "Lorem ipsum,,,", autor: "Antonio", id: 1 },
 		{ titulo: "Fiesta del Ramis", body: "Mucha paella,,,", autor: "Enrique", id: 2 },
 		{ titulo: "GP de belgica", body: "Round 15,,,", autor: "Lobato", id: 3 },
-
+		{ titulo: "GP de belgica", body: "Round 22", autor: "Jorge", id: 4 },
 	])
+
+	const [nombre, setNombre] = useState("Adrià");
+
+	const handleEliminarBlog = (id) => {
+		const nuevoBlog = blogs.filter(blog => blog.id !== id);
+		setBlogs(nuevoBlog);
+	}
+
+	useEffect(() => {
+		console.log("Using effect en marxando");
+		console.log(blogs);
+	}, [handleEliminarBlog]);
 
 	return (
 		<div className="home">
-			{blogs.map((blog) =>
-				<div className="blog-preview" key={blog.id}>
-					<h2>{blog.titulo}</h2>
-					<p>Escrito por {blog.autor}</p>
-				</div>
-			)}
+			<BlogList blogs = { blogs } titulo = "Listado completo de blogs" handleEliminarBlog = { handleEliminarBlog }/>
+			{/* <BlogList blogs = { blogs.filter(blog => blog.titulo === 'GP de belgica') } titulo = "Blog F1" /> */}
+			{/* <BlogList blogs = { blogs.filter(blog => blog.autor === 'Enrique') } titulo = "Blogs de Enrique" /> */}
+			<p>{ nombre }</p>
+			<button onClick={() => setNombre("Jose") }>Cambio de nombre</button>
 		</div>
 	);
 }
 
 export default Inicio;
+
+
+// useEffect

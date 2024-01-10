@@ -48,6 +48,7 @@
 
 .blog-preview:hover {
   box-shadow: 1px 3px 5px #f1356d;
+  cursor: pointer;
 }
 
 .blog-preview h2{
